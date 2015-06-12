@@ -1,0 +1,49 @@
+{% load humanize %}
+<html>
+<style>
+html{
+	color:white;
+}
+body{
+
+	text-align: center;
+	font: Tahoma;
+}
+table,th,td{
+	border: 3px solid;
+	border-color: orange;
+	text-align: center;
+	border-collapse: collapse;
+	z-index: 3
+}
+th,td{
+	padding:10px;
+	text-align: :left;
+
+}
+
+
+</style>
+<body align=center background="http://s10.postimg.org/gxa52n709/weed_wallpaper_65.jpg" >
+	<h1 style = "color:white">Title : {{title}}</h1><br></br>
+
+<h1><a href = "{{best_video_url}}" style="color: white" >Best Quality Video</a></h1>
+<h1><a href = "{{best_audio_url}}" style="color: white">Best Quality Audio</a></h1>
+<table align = "center"><caption>Download options</caption>
+	<tr ><th style="color:white"><h3>Resolution<h3></th>
+		<th style="color:white"><h3>Extension<h3></th>
+		<th style="color:white"><h3>Size<h3></th>
+	</tr>
+
+{% for i in streams_1 %}
+	<tr><td><a href = "{{i.url}}" style="color: white"> {{i.resolution}}</a></td>
+		<td><a href = "{{i.url}}" style="color: white"> {{i.extension}}</a></td>
+		<td><a href = "{{i.url}}" style="color: white"> {{i.get_filesize|intcomma}}</a></td>
+
+
+	</tr>
+
+{%endfor%}
+</table>
+</body>
+</html>

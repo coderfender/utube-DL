@@ -1,0 +1,40 @@
+{% load humanize %}
+<html>
+<style>
+
+#header{
+
+	font-family: Serif;
+	font-size: 20px;
+	color: white;
+	
+
+}
+#inpt{
+	height: 25px;
+	width: 600px;
+	outline-style: double;
+	outline-color: orange;
+	outline-width:thick;
+}
+button{
+	height: 25px;
+	width:75px;
+	
+}
+</style>
+<center>
+	<img src = "http://s23.postimg.org/cypsmieij/jpeglogo.jpg" height = "20%" width = "25%" style="opacity:0.7;filter:alpha(opacity=40)">
+<body background="http://s10.postimg.org/gxa52n709/weed_wallpaper_65.jpg" size = "100%">
+	<h2 id ="header">YouTube downloader</h2>
+	<form action = "{% url 'res' %}" method = "POST" >
+	{%csrf_token%}
+	<h2 id = "header">Enter the video Link from youtube</h2><br>
+	<input id= "inpt"type ="text" name = "ylink" required></input><br><br>
+	<!-- <button type ="submit" align = 'right'>Submit!</button><br> -->
+	<button type ="submit" align = 'right'>Download</button><br>
+</form>	
+<a href="mailto:bhargava333@gmail.com"  style="color: white">Contact us!!!</a>
+</body>
+</center> 
+</html>
